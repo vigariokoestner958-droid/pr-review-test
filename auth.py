@@ -16,3 +16,7 @@ def login(username, password):
 def get_users():
     conn = sqlite3.connect("users.db")
     return [row for row in conn.execute("SELECT * FROM users")]
+
+def reset_password(email):
+    new_password = email.split("@")[0] + "123"
+    return new_password
